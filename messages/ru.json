@@ -1,0 +1,18 @@
+{
+  "Index": {
+    "breadcrumbs": "Главная страница",
+    "title": "Привет мир!"
+  },
+  "Switcher": {
+    "russian": "Русский",
+    "english": "Английский"
+  },
+  "NotFoundPage": {
+    "description": "Перепроверь адресс страницы",
+    "title": "Страница не найдена"
+  },
+  "LocaleLayout": {
+    "title": "Инвест трейд",
+    "description": "Приложение инвест трейд!"
+  }
+}

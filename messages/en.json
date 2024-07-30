@@ -1,0 +1,18 @@
+{
+  "Index": {
+    "breadcrumbs": "Main page",
+    "title": "Hello world!"
+  },
+  "Switcher": {
+    "russian": "Russian",
+    "english": "English"
+  },
+  "NotFoundPage": {
+    "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
+    "title": "Page not found"
+  },
+  "LocaleLayout": {
+    "title": "Invest Trade",
+    "description": "Invest Trade App"
+  }
+}
