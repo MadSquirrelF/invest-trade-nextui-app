@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 import { Card, CardBody, CardFooter } from "@nextui-org/card";
-import NextImage from "next/image";
 
 import BreadcrumbsClient, {
   IBreadcrumbItem,
@@ -8,8 +7,12 @@ import BreadcrumbsClient, {
 import {
   BgMain,
   CalculatorMain,
+  FurnituraIcon,
   HomeIcon,
+  KomplektIcon,
   NewspaperMain,
+  OborudovanIcon,
+  PVHIcon,
   WindowMain,
 } from "@/components/icons";
 import { subtitle, title } from "@/components/primitives";
@@ -17,7 +20,6 @@ import { Slider, SlideSchema } from "@/components/Slider/Slider";
 import ManhattanBg from "@/assets/images/bg-hm.jpg";
 import AcademBg from "@/assets/images/plan1.webp";
 import PremiumBg from "@/assets/images/XXL.webp";
-import BgBlock from "@/assets/images/test2.png";
 
 const testSlide: SlideSchema[] = [
   {
@@ -52,7 +54,7 @@ export default function Home() {
   const breadcrumbs: IBreadcrumbItem[] = [
     {
       startContent: <HomeIcon size={20} />,
-      text: t("breadcrumbs"),
+      text: t("breadcrumbs.Main page"),
       href: "/",
     },
   ];
@@ -63,17 +65,6 @@ export default function Home() {
 
       <div className="w-full flex flex-row gap-x-8">
         <Slider slides={testSlide} />
-        <Card isBlurred className="w-1/3">
-          <CardBody>
-            <NextImage
-              alt={"Big Building calculations windows"}
-              className="object-cover"
-              fill={true}
-              src={BgBlock}
-              title={"Big City live"}
-            />
-          </CardBody>
-        </Card>
       </div>
 
       <div className="relative w-full flex flex-row gap-x-8">
@@ -107,7 +98,7 @@ export default function Home() {
             </CardBody>
           </Card>
           <div className="flex flex-row gap-x-8 w-full">
-            <Card isBlurred isPressable className="w-full h-[300px]">
+            <Card isBlurred isPressable className="w-full h-[340px]">
               <CardBody className="gap-y-2">
                 <h2
                   className={title({
@@ -159,26 +150,109 @@ export default function Home() {
             </Card>
           </div>
         </div>
-
-        <Card isBlurred>
-          <CardBody>
-            <div className="flex flex-row p-2">
-              <div className="flex flex-col gap-y-2">
-                <h1
+        <div className="flex flex-col gap-y-8 w-full">
+          <div className="flex flex-row gap-x-8">
+            <Card isBlurred isPressable className="w-full h-[340px] relative">
+              <CardBody>
+                <FurnituraIcon
+                  className="absolute bottom-2 right-5"
+                  size={150}
+                />
+                <h2
                   className={title({
-                    color: "blue",
+                    color: "default",
+                    size: "sm",
+                    bold: "bold",
                   })}
                 >
-                  Ваш партнер в оконном бизнесе!
-                </h1>
-                <p className={subtitle()}>
-                  Мы являемся официальным поставщиком оборудования и материалов
-                  для производства пластиковых и алюминиевых конструкций
+                  Фурнитура
+                </h2>
+                <p
+                  className={subtitle({
+                    size: "sm",
+                  })}
+                >
+                  Это система деталей, которые удерживают раму, позволяют
+                  открывать и закрывать ее, а также обеспечивают ее плотное
+                  прилегание к профилю.
                 </p>
-              </div>
-            </div>
-          </CardBody>
-        </Card>
+              </CardBody>
+            </Card>
+            <Card isBlurred isPressable className="w-full relative">
+              <CardBody>
+                <PVHIcon className="absolute bottom-2 right-2" size={150} />
+                <h2
+                  className={title({
+                    color: "default",
+                    size: "sm",
+                    bold: "bold",
+                  })}
+                >
+                  ПВХ Профиль
+                </h2>
+                <p
+                  className={subtitle({
+                    size: "sm",
+                  })}
+                >
+                  Это основной элемент пластиковых окон и дверей, изготовленный
+                  из поливинилхлорида методом экструзии, с заданными формами и
+                  размерами сечения.
+                </p>
+              </CardBody>
+            </Card>
+          </div>
+          <div className="flex  flex-row gap-x-8">
+            <Card isBlurred isPressable className="w-full h-[340px] relative">
+              <CardBody>
+                <OborudovanIcon
+                  className="absolute bottom-2 right-2"
+                  size={150}
+                />
+                <h2
+                  className={title({
+                    color: "default",
+                    size: "sm",
+                    bold: "bold",
+                  })}
+                >
+                  Оборудование
+                </h2>
+                <p
+                  className={subtitle({
+                    size: "sm",
+                  })}
+                >
+                  Все необходимое для производства пластиковых окон.
+                </p>
+              </CardBody>
+            </Card>
+            <Card isBlurred isPressable className="w-full relative">
+              <CardBody>
+                <KomplektIcon
+                  className="absolute bottom-2 right-2"
+                  size={150}
+                />
+                <h2
+                  className={title({
+                    color: "default",
+                    size: "sm",
+                    bold: "bold",
+                  })}
+                >
+                  Комплектующие
+                </h2>
+                <p
+                  className={subtitle({
+                    size: "sm",
+                  })}
+                >
+                  Данный раздел находится в стадии разработки.
+                </p>
+              </CardBody>
+            </Card>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 import { link as linkStyles } from "@nextui-org/theme";
-import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/card";
+import { Card, CardBody, CardFooter } from "@nextui-org/card";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
 import { Checkbox } from "@nextui-org/checkbox";
@@ -170,13 +170,13 @@ const Footer = () => {
           </h2>
 
           <Card>
-            <CardHeader>
-              <p className="text-md">Почта</p>
-            </CardHeader>
             <CardBody className="gap-y-3">
               <Input
-                aria-label="Email input contact"
-                placeholder="Enter your email..."
+                isRequired
+                label="Почта"
+                labelPlacement="outside"
+                placeholder="Введите вашу почту"
+                size="lg"
                 startContent={
                   <MailIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
                 }

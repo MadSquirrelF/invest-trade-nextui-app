@@ -1,6 +1,9 @@
 {
   "Index": {
-    "breadcrumbs": "Main page",
+    "breadcrumbs": {
+      "Main page": "Main page",
+      "About company": "About company"
+    },
     "title": "Hello world!"
   },
   "Switcher": {

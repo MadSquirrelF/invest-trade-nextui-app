@@ -1,6 +1,9 @@
 {
   "Index": {
-    "breadcrumbs": "Главная страница",
+    "breadcrumbs": {
+      "Main page": "Главная страница",
+      "About company": "О компании"
+    },
     "title": "Привет мир!"
   },
   "Switcher": {

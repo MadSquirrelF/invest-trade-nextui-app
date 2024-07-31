@@ -1,3 +1,7 @@
+/* eslint-disable react/display-name */
+/* eslint-disable jsx-a11y/no-autofocus */
+"use client";
+
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -14,6 +18,18 @@ import { Input } from "@nextui-org/input";
 import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
+import {
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  useDisclosure,
+} from "@nextui-org/modal";
+import { Checkbox } from "@nextui-org/checkbox";
+import { Divider } from "@nextui-org/divider";
+import { memo, useState } from "react";
+import React from "react";
 
 import { LanguageSwitch } from "./language-switch";
 
@@ -26,9 +42,20 @@ import {
   InstagramIcon,
   SearchIcon,
   Logo,
+  MailIcon,
+  LockIcon,
+  YandexIcon,
+  EyeOpenedIcon,
+  EyeClosedIcon,
 } from "@/components/icons";
 
-export const Navbar = () => {
+export const Navbar = memo(() => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => setIsVisible(!isVisible);
+
   const searchInput = (
     <Input
       aria-label="Search"
@@ -95,8 +122,111 @@ export const Navbar = () => {
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <LanguageSwitch />
         <NavbarItem className="hidden md:flex">
-          <Button color="primary">Войти</Button>
+          <Button color="primary" onPress={onOpen}>
+            Войти
+          </Button>
         </NavbarItem>
+        <Modal
+          isOpen={isOpen}
+          placement="top-center"
+          onOpenChange={onOpenChange}
+        >
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col gap-y-6">
+                  <div className="flex flex-col gap-y-1">
+                    <p className="font-semibold text-lg">Вход на сайт</p>
+                    <p className="text-default-600 text-sm">
+                      Для того, чтобы перейти к личным данным нужно войти
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col gap-y-2">
+                    <button
+                      className="flex min-h-11 rounded-lg bg-[#07f] gap-x-4 hover:opacity-80 text-base active:opacity-70 py-2 px-3 flex-row text-white font-medium w-full items-center justify-center bg-primary"
+                      type="button"
+                    >
+                      <VkIcon size={28} />
+                      Войти через VK ID
+                    </button>
+                    <button
+                      className="flex min-h-11 rounded-lg text-white gap-x-4 text-base flex-row hover:opacity-90 active:opacity-80 py-2 px-3 font-medium w-full items-center justify-center bg-black"
+                      type="button"
+                    >
+                      <YandexIcon size={28} />
+                      Войти через Яндекс ID
+                    </button>
+                  </div>
+
+                  <Divider className="my-1" />
+                </ModalHeader>
+
+                <ModalBody>
+                  <form className="flex flex-col gap-y-6">
+                    <Input
+                      autoFocus
+                      isRequired
+                      label="Почта"
+                      labelPlacement="outside"
+                      placeholder="Введите почту"
+                      size="lg"
+                      startContent={
+                        <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                      }
+                      type="email"
+                      variant="flat"
+                    />
+                    <Input
+                      isRequired
+                      endContent={
+                        <button
+                          aria-label="toggle password visibility"
+                          className="focus:outline-none"
+                          type="button"
+                          onClick={toggleVisibility}
+                        >
+                          {isVisible ? (
+                            <EyeOpenedIcon className="text-2xl text-default-400 pointer-events-none" />
+                          ) : (
+                            <EyeClosedIcon className="text-2xl text-default-400 pointer-events-none" />
+                          )}
+                        </button>
+                      }
+                      label="Пароль"
+                      labelPlacement="outside"
+                      placeholder="Введите пароль"
+                      size="lg"
+                      startContent={
+                        <LockIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                      }
+                      type={isVisible ? "text" : "password"}
+                      variant="flat"
+                    />
+                  </form>
+
+                  <div className="flex py-2 px-1 justify-between">
+                    <Checkbox
+                      classNames={{
+                        label: "text-small",
+                      }}
+                    >
+                      Запомнить меня
+                    </Checkbox>
+                    <Link color="primary" href="#" size="sm">
+                      Забыли пароль?
+                    </Link>
+                  </div>
+                </ModalBody>
+                <ModalFooter className="w-full flex flex-col gap-2">
+                  <Button color="primary" onPress={onClose}>
+                    Войти
+                  </Button>
+                </ModalFooter>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
@@ -131,4 +261,4 @@ export const Navbar = () => {
       </NavbarMenu>
     </NextUINavbar>
   );
-};
+});
