@@ -30,6 +30,7 @@ import { Checkbox } from "@nextui-org/checkbox";
 import { Divider } from "@nextui-org/divider";
 import { memo, useState } from "react";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 import { LanguageSwitch } from "./language-switch";
 
@@ -50,6 +51,7 @@ import {
 } from "@/components/icons";
 
 export const Navbar = memo(() => {
+  const t = useTranslations("Navbar");
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const [isVisible, setIsVisible] = useState(false);
@@ -96,7 +98,7 @@ export const Navbar = memo(() => {
                 color="foreground"
                 href={item.href}
               >
-                {item.label}
+                {t(item.label)}
               </NextLink>
             </NavbarItem>
           ))}

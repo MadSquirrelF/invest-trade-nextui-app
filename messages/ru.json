@@ -2,9 +2,16 @@
   "Index": {
     "breadcrumbs": {
       "Main page": "Главная страница",
-      "About company": "О компании"
+      "About company": "О компании",
+      "Sign up": "Регистрация"
     },
     "title": "Привет мир!"
+  },
+  "Navbar": {
+    "Home": "Главная",
+    "About us": "О компании",
+    "News": "Новости",
+    "Shop": "Магазин"
   },
   "Switcher": {
     "russian": "Русский",

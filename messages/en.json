@@ -2,9 +2,16 @@
   "Index": {
     "breadcrumbs": {
       "Main page": "Main page",
-      "About company": "About company"
+      "About company": "About company",
+      "Sign up": "Sign up"
     },
     "title": "Hello world!"
+  },
+  "Navbar": {
+    "Home": "Home",
+    "About us": "About us",
+    "News": "News",
+    "Shop": "Shop"
   },
   "Switcher": {
     "russian": "Russian",
