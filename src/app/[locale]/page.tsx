@@ -254,6 +254,193 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="relative w-full flex flex-row gap-x-8">
+        <BgMain
+          className="flex-none absolute opacity-65"
+          height={"100%"}
+          width={"100%"}
+        />
+        <div className="w-full flex flex-col gap-y-8">
+          <Card isBlurred>
+            <CardBody>
+              <div className="flex flex-row p-2">
+                <div className="flex flex-col gap-y-2">
+                  <h1
+                    className={title({
+                      color: "primary",
+                      size: "lg",
+                      bold: "bold",
+                    })}
+                  >
+                    Ваш партнер в оконном бизнесе!
+                  </h1>
+                  <p className={subtitle()}>
+                    Мы являемся официальным поставщиком оборудования и
+                    материалов для производства пластиковых и алюминиевых
+                    конструкций
+                  </p>
+                </div>
+                <WindowMain className="flex-none" height={300} width={300} />
+              </div>
+            </CardBody>
+          </Card>
+          <div className="flex flex-row gap-x-8 w-full">
+            <Card isBlurred isPressable className="w-full h-[340px]">
+              <CardBody className="gap-y-2">
+                <h2
+                  className={title({
+                    color: "primary",
+                    size: "sm",
+                    bold: "bold",
+                  })}
+                >
+                  Онлайн калькулятор
+                </h2>
+                <p className={subtitle()}>
+                  Узнайте точную стоимость установки окон с учетом ваших
+                  потребностей и бюджета!
+                </p>
+              </CardBody>
+              <CardFooter>
+                <CalculatorMain
+                  className="flex-none absolute right-2 bottom-[-20px]"
+                  height={140}
+                  width={150}
+                />
+              </CardFooter>
+            </Card>
+
+            <Card
+              isBlurred
+              isPressable
+              className="w-full border-none bg-background/60"
+            >
+              <CardBody>
+                <h2
+                  className={title({
+                    color: "default",
+                    size: "sm",
+                    bold: "bold",
+                  })}
+                >
+                  Последние новости
+                </h2>
+                <p className={subtitle()}>09.01.2024</p>
+              </CardBody>
+              <CardFooter>
+                <NewspaperMain
+                  className="flex-none absolute right-0 bottom-[-30px]"
+                  height={173}
+                  width={209}
+                />
+              </CardFooter>
+            </Card>
+          </div>
+        </div>
+        <div className="flex flex-col gap-y-8 w-full">
+          <div className="flex flex-row gap-x-8">
+            <Card isBlurred isPressable className="w-full h-[340px] relative">
+              <CardBody>
+                <FurnituraIcon
+                  className="absolute bottom-2 right-5"
+                  size={150}
+                />
+                <h2
+                  className={title({
+                    color: "default",
+                    size: "sm",
+                    bold: "bold",
+                  })}
+                >
+                  Фурнитура
+                </h2>
+                <p
+                  className={subtitle({
+                    size: "sm",
+                  })}
+                >
+                  Это система деталей, которые удерживают раму, позволяют
+                  открывать и закрывать ее, а также обеспечивают ее плотное
+                  прилегание к профилю.
+                </p>
+              </CardBody>
+            </Card>
+            <Card isBlurred isPressable className="w-full relative">
+              <CardBody>
+                <PVHIcon className="absolute bottom-2 right-2" size={150} />
+                <h2
+                  className={title({
+                    color: "default",
+                    size: "sm",
+                    bold: "bold",
+                  })}
+                >
+                  ПВХ Профиль
+                </h2>
+                <p
+                  className={subtitle({
+                    size: "sm",
+                  })}
+                >
+                  Это основной элемент пластиковых окон и дверей, изготовленный
+                  из поливинилхлорида методом экструзии, с заданными формами и
+                  размерами сечения.
+                </p>
+              </CardBody>
+            </Card>
+          </div>
+          <div className="flex  flex-row gap-x-8">
+            <Card isBlurred isPressable className="w-full h-[340px] relative">
+              <CardBody>
+                <OborudovanIcon
+                  className="absolute bottom-2 right-2"
+                  size={150}
+                />
+                <h2
+                  className={title({
+                    color: "default",
+                    size: "sm",
+                    bold: "bold",
+                  })}
+                >
+                  Оборудование
+                </h2>
+                <p
+                  className={subtitle({
+                    size: "sm",
+                  })}
+                >
+                  Все необходимое для производства пластиковых окон.
+                </p>
+              </CardBody>
+            </Card>
+            <Card isBlurred isPressable className="w-full relative">
+              <CardBody>
+                <KomplektIcon
+                  className="absolute bottom-2 right-2"
+                  size={150}
+                />
+                <h2
+                  className={title({
+                    color: "default",
+                    size: "sm",
+                    bold: "bold",
+                  })}
+                >
+                  Комплектующие
+                </h2>
+                <p
+                  className={subtitle({
+                    size: "sm",
+                  })}
+                >
+                  Данный раздел находится в стадии разработки.
+                </p>
+              </CardBody>
+            </Card>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

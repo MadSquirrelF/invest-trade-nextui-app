@@ -57,7 +57,7 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider messages={messages}>
           <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-            <div className="relative flex flex-col h-screen">
+            <div className="relative flex flex-col">
               <Navbar />
               <main className="container mx-auto max-w-full py-5 px-6 flex-grow">
                 {children}
