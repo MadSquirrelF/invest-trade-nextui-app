@@ -167,9 +167,15 @@ export default function SignUpPage() {
             </video>
 
             <div className="absolute top-0 left-0 w-full h-full bg-default grid z-10 grid-cols-3 gap-3 mix-blend-screen">
-              {Array.from({ length: 9 }).map((_, index) => (
-                <div key={index} className="bg-black rounded-md" />
-              ))}
+              <div className="bg-black rounded-md" />
+              <div className="bg-black rounded-md" />
+              <div className="bg-black rounded-md" />
+              <div className="bg-black rounded-md" />
+              <div className="bg-black rounded-md" />
+              <div className="bg-black rounded-md" />
+              <div className="bg-black rounded-md" />
+              <div className="bg-black rounded-md" />
+              <div className="bg-black rounded-md" />
             </div>
           </CardBody>
         </Card>
