@@ -228,29 +228,15 @@ export default function AboutPage() {
         </motion.div>
       </div>
 
-      <div className="flex flex-row justify-between items-start py-14">
-        <motion.h2
-          animate={{
-            x: 0,
-            opacity: 1,
-          }}
+      <div className="flex flex-row justify-between items-start mt-8 py-14">
+        <h2
           className={title({
             bold: "bold",
             size: "lg",
           })}
-          initial={{
-            opacity: 0,
-            x: -300,
-          }}
-          transition={{
-            type: "spring",
-            bounce: 0.4,
-            duration: 0.8,
-          }}
-          viewport={{ once: true, amount: 0.8 }}
         >
           О компании
-        </motion.h2>
+        </h2>
 
         <div className="flex flex-col gap-y-5 max-w-[50%]">
           <p className={subtitle()}>
@@ -275,27 +261,14 @@ export default function AboutPage() {
       <Divider />
 
       <div className="flex flex-row justify-between items-start py-14">
-        <motion.h2
-          animate={{
-            x: 0,
-            opacity: 1,
-          }}
+        <h2
           className={title({
             bold: "bold",
             size: "lg",
           })}
-          initial={{
-            opacity: 0,
-            x: -300,
-          }}
-          transition={{
-            type: "spring",
-            bounce: 0.4,
-            duration: 0.8,
-          }}
         >
           Наша миссия
-        </motion.h2>
+        </h2>
 
         <div className="flex flex-col gap-y-5 max-w-[50%]">
           <p className={subtitle()}>

@@ -9,6 +9,7 @@
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
 	},
 	"dependencies": {
+		"@nextui-org/avatar": "^2.0.32",
 		"@nextui-org/breadcrumbs": "^2.0.12",
 		"@nextui-org/button": "2.0.37",
 		"@nextui-org/card": "^2.0.33",
@@ -24,12 +25,19 @@
 		"@nextui-org/listbox": "2.1.25",
 		"@nextui-org/modal": "^2.0.39",
 		"@nextui-org/navbar": "2.0.36",
+		"@nextui-org/pagination": "^2.0.35",
+		"@nextui-org/skeleton": "^2.0.31",
 		"@nextui-org/snippet": "2.0.41",
 		"@nextui-org/switch": "2.0.33",
 		"@nextui-org/system": "2.2.5",
+		"@nextui-org/tabs": "^2.0.35",
 		"@nextui-org/theme": "2.2.9",
 		"@react-aria/ssr": "3.9.4",
 		"@react-aria/visually-hidden": "3.8.12",
+		"@tailwindcss/line-clamp": "^0.4.4",
+		"@tanstack/react-query": "^5.51.23",
+		"@tanstack/react-query-devtools": "^5.51.23",
+		"axios": "^1.7.3",
 		"clsx": "2.1.1",
 		"framer-motion": "~11.1.1",
 		"intl-messageformat": "^10.5.0",
@@ -42,6 +50,7 @@
 		"swiper": "^11.1.9"
 	},
 	"devDependencies": {
+		"@tanstack/eslint-plugin-query": "^5.51.15",
 		"@types/node": "20.5.7",
 		"@types/react": "18.3.3",
 		"@types/react-dom": "18.3.0",

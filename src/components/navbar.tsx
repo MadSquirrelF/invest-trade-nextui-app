@@ -138,7 +138,7 @@ export const Navbar = memo(() => {
               <>
                 <ModalHeader className="flex flex-col gap-y-6">
                   <div className="flex flex-col gap-y-1">
-                    <p className="font-semibold text-lg">Вход на сайт</p>
+                    <p className="font-semibold text-2xl">Вход на сайт</p>
                     <p className="text-default-600 text-sm">
                       Для того, чтобы перейти к личным данным нужно войти
                     </p>
@@ -215,15 +215,31 @@ export const Navbar = memo(() => {
                     >
                       Запомнить меня
                     </Checkbox>
-                    <Link color="primary" href="#" size="sm">
+                    <Link
+                      className="font-semibold"
+                      color="primary"
+                      href="#"
+                      size="sm"
+                    >
                       Забыли пароль?
                     </Link>
                   </div>
                 </ModalBody>
                 <ModalFooter className="w-full flex flex-col gap-2">
-                  <Button color="primary" onPress={onClose}>
+                  <Button color="primary" size="lg" onPress={onClose}>
                     Войти
                   </Button>
+                  <div className="flex flex-row w-full gap-x-4 items-center justify-center">
+                    <p>Еще нет аккаунта?</p>
+                    <Link
+                      className="font-semibold"
+                      color="primary"
+                      href="#"
+                      size="sm"
+                    >
+                      Зарегистрироваться
+                    </Link>
+                  </div>
                 </ModalFooter>
               </>
             )}
