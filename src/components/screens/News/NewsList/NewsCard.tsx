@@ -34,7 +34,7 @@ const NewsCard = memo((props: INewCard) => {
           src={`http://localhost:1418${item.preview_img}`}
         />
       </CardBody>
-      <CardFooter className="flex h-60 w-full flex-col gap-y-3 text-small justify-between">
+      <CardFooter className="flex h-60 w-full items-start flex-col gap-y-3 text-small justify-between">
         <div className="flex flex-row w-full justify-start items-center gap-x-3">
           <Avatar
             isBordered

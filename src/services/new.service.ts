@@ -1,18 +1,24 @@
 import axios from "axios";
 
-import { INew } from "@/types/new.interface";
+import { INewResponse } from "@/types/new.interface";
 
 export const NewService = {
-  async getNews(searchTerm: string) {
-    const { data: news } = await axios.get<INew[]>(
+  async getNews(
+    searchTerm: string,
+    limit: number,
+    page: number,
+    sort: string,
+    order: string,
+  ) {
+    const { data: news } = await axios.get<INewResponse>(
       "http://localhost:1418/api/news",
       {
         params: {
-          _limit: 1,
-          _page: 1,
-          _sort: "",
-          _order: "desc",
-          _serchTerm: searchTerm,
+          _limit: limit,
+          _page: page,
+          _sort: sort,
+          _order: order,
+          _searchTerm: searchTerm,
         },
       },
     );

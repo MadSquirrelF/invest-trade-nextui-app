@@ -32,6 +32,7 @@
 		"@nextui-org/system": "2.2.5",
 		"@nextui-org/tabs": "^2.0.35",
 		"@nextui-org/theme": "2.2.9",
+		"@nextui-org/tooltip": "^2.0.39",
 		"@react-aria/ssr": "3.9.4",
 		"@react-aria/visually-hidden": "3.8.12",
 		"@tailwindcss/line-clamp": "^0.4.4",
@@ -47,7 +48,8 @@
 		"react": "18.3.1",
 		"react-dom": "18.3.1",
 		"react-transition-group": "^4.4.5",
-		"swiper": "^11.1.9"
+		"swiper": "^11.1.9",
+		"zustand": "^4.5.4"
 	},
 	"devDependencies": {
 		"@tanstack/eslint-plugin-query": "^5.51.15",

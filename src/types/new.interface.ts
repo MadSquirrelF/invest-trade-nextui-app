@@ -32,3 +32,10 @@ export interface INew {
   createdAt: string;
   blocks: NewBlock[];
 }
+
+export interface INewResponse {
+  data: INew[];
+  totalPages: number;
+  currentPage: number;
+  totalCount: number;
+}
