@@ -10,7 +10,7 @@ import EmptyData from "@/components/shared/EmptyData/EmptyData";
 import { INew } from "@/types/new.interface";
 
 const getSkeletons = () =>
-  new Array(8).fill(0).map((item, index) => <NewsCardSkeleton key={index} />);
+  new Array(4).fill(0).map((item, index) => <NewsCardSkeleton key={index} />);
 
 interface NewsListProps {
   isLoading: boolean;
