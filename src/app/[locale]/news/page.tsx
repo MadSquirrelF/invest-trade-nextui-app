@@ -8,7 +8,6 @@ import NewsContent from "@/components/screens/News/NewsContent";
 import NewsSearch from "@/components/screens/News/Filters/NewsSearch";
 import { subtitle, title } from "@/components/primitives";
 import NewsYearTabs from "@/components/screens/News/Filters/NewsYearTabs";
-import NewsGridTabs from "@/components/screens/News/Filters/NewsGridTabs";
 import NewsOrderTabs from "@/components/screens/News/Filters/NewsOrderTabs";
 import NewsSortDropdown from "@/components/screens/News/Filters/NewsSortDropdown";
 
@@ -47,7 +46,6 @@ export default function NewsPage() {
       <div className="flex flex-row items-center w-full justify-between mt-10">
         <div className="flex flex-row gap-x-3">
           <NewsYearTabs />
-          <NewsGridTabs />
           <NewsOrderTabs />
         </div>
 

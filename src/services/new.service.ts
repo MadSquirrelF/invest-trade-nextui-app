@@ -9,12 +9,14 @@ export const NewService = {
     page: number,
     sort: string,
     order: string,
+    date: string,
   ) {
     const { data: news } = await axios.get<INewResponse>(
       "http://localhost:1418/api/news",
       {
         params: {
           _limit: limit,
+          _date: date,
           _page: page,
           _sort: sort,
           _order: order,

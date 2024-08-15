@@ -12,12 +12,13 @@ export const useNew = () => {
   const page = useNewStore((state) => state.currentPage);
   const sort = useNewStore((state) => state.sortBy);
   const order = useNewStore((state) => state.orderBy);
+  const date = useNewStore((state) => state.date);
   const debouncedSearch = useDebounce(searchTerm, 500);
 
   const { data, isLoading, isError, error } = useQuery<INewResponse>({
-    queryKey: ["new", debouncedSearch, limit, page, sort, order],
+    queryKey: ["new", debouncedSearch, limit, page, sort, order, date],
     queryFn: () =>
-      NewService.getNews(debouncedSearch, limit, page, sort, order),
+      NewService.getNews(debouncedSearch, limit, page, sort, order, date),
   });
 
   return useMemo(

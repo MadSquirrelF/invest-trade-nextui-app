@@ -1,3 +1,5 @@
+import { User } from "./user.interface";
+
 export enum NewBlockType {
   IMAGE = "IMAGE",
   TEXT = "TEXT",
@@ -19,7 +21,6 @@ export interface NewTextBlock extends NewBlockBase {
   blockTitle?: string;
   paragraphs: string[];
 }
-
 export type NewBlock = NewImageBlock | NewTextBlock;
 
 export interface INew {
@@ -27,6 +28,9 @@ export interface INew {
   slug: string;
   title: string;
   subtitle: string;
+  category: string;
+  likes: number;
+  author: Pick<User, "username" | "avatar">;
   views: number;
   preview_img: string;
   createdAt: string;
