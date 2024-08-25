@@ -9,7 +9,7 @@ export interface User {
   username: string;
   description: string;
   avatarPath: string;
-  roles: UserRole[];
+  roles: UserRole;
 }
 
 export interface FeatureFlags {
