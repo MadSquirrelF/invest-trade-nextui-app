@@ -3,14 +3,14 @@ import Cookies from "js-cookie";
 import { removeTokensStorage, saveToStorage } from "./auth.helper";
 
 import { axiosClassic } from "@/api/interceptors";
-import { getAuthUrl } from "@/config/api.config";
+import { API_URL } from "@/config/api.config";
 import { IAuthResponse } from "@/types/auth.interface";
 import { getContentType } from "@/api/api.helper";
 
 export const AuthService = {
   async login(email: string, password: string) {
     const response = await axiosClassic.post<IAuthResponse>(
-      getAuthUrl(`/login`),
+      API_URL.auth("/login"),
       {
         email,
         password,
@@ -31,7 +31,7 @@ export const AuthService = {
   async getNewTokens() {
     const refreshToken = Cookies.get(`refreshToken`);
     const response = await axiosClassic.post<IAuthResponse>(
-      getAuthUrl(`/login/access-token`),
+      API_URL.auth("/login/access-token"),
       { refreshToken },
       { headers: getContentType() },
     );

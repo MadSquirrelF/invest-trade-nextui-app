@@ -5,7 +5,7 @@ export interface NewsStore {
   currentPage: number;
   totalPages: number;
   date: string;
-  sortBy: "view" | "createdAt" | "title";
+  sortBy: "views" | "createdAt" | "title";
   orderBy: "asc" | "desc";
   limit: number;
   totalCount: number;
@@ -13,7 +13,7 @@ export interface NewsStore {
   setSearchTerm: (term: string) => void;
   setDate: (date: string) => void;
   setTotalCount: (count: number) => void;
-  setSortBy: (sortBy: "view" | "createdAt" | "title") => void;
+  setSortBy: (sortBy: "views" | "createdAt" | "title") => void;
   setCurrentPage: (page: number) => void;
   setOrderBy: (orderBy: "asc" | "desc") => void;
 }
@@ -38,7 +38,7 @@ export const useNewStore = create<NewsStore>((set) => ({
   },
 
   // Функция для изменения сортировки
-  setSortBy: (sortBy: "view" | "createdAt" | "title") => {
+  setSortBy: (sortBy: "views" | "createdAt" | "title") => {
     set({ sortBy });
   },
 

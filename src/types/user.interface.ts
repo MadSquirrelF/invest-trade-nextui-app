@@ -8,10 +8,8 @@ export interface User {
   email: string;
   username: string;
   description: string;
-  avatar: string;
+  avatarPath: string;
   roles: UserRole[];
-  features?: FeatureFlags;
-  jsonSettings?: JsonSettings;
 }
 
 export interface FeatureFlags {

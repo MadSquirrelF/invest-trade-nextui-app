@@ -8,6 +8,8 @@ import { Link } from "@nextui-org/link";
 import { Button } from "@nextui-org/button";
 import { SubmitHandler, useForm } from "react-hook-form";
 
+import { useAuthMutation } from "../useAuthMutation";
+
 import { MailIcon } from "@/components/icons";
 import PasswordInput from "@/components/shared/PassordInput/PasswordInput";
 import { ILogin } from "@/types/auth.interface";
@@ -18,9 +20,10 @@ const LoginForm = memo(() => {
     mode: "onBlur",
   });
 
+  const { mutate } = useAuthMutation(reset);
+
   const onSubmit: SubmitHandler<ILogin> = (data) => {
-    console.log("Login data:", data);
-    reset();
+    mutate(data);
   };
 
   return (

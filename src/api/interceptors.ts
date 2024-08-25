@@ -1,23 +1,22 @@
-import axios from "axios";
+import axios, { CreateAxiosDefaults } from "axios";
 import Cookies from "js-cookie";
 
 import { errorCatch, getContentType } from "./api.helper";
 
-import { __API__ } from "@/constants/constants";
 import { AuthService } from "@/services/auth/auth.service";
 import { removeTokensStorage } from "@/services/auth/auth.helper";
+import { SERVER_URL } from "@/config/api.config";
 
-export const axiosClassic = axios.create({
-  baseURL: __API__,
+const options: CreateAxiosDefaults = {
+  baseURL: SERVER_URL,
   headers: getContentType(),
-});
+};
 
-export const instance = axios.create({
-  baseURL: __API__,
-  headers: getContentType(),
-});
+export const axiosClassic = axios.create(options);
 
-instance.interceptors.request.use((config) => {
+export const axiosWithAuth = axios.create(options);
+
+axiosWithAuth.interceptors.request.use((config) => {
   const accessToken = Cookies.get("accessToken");
 
   if (config.headers && accessToken) {
@@ -27,7 +26,7 @@ instance.interceptors.request.use((config) => {
   return config;
 });
 
-instance.interceptors.response.use(
+axiosWithAuth.interceptors.response.use(
   (config) => config,
   async (error) => {
     const originalRequest = error.config;
@@ -43,7 +42,7 @@ instance.interceptors.response.use(
       try {
         await AuthService.getNewTokens();
 
-        return await instance.request(originalRequest);
+        return await axiosWithAuth.request(originalRequest);
         // eslint-disable-next-line @typescript-eslint/no-shadow
       } catch (error) {
         if (errorCatch(error) === `jwt expired`) removeTokensStorage();
@@ -53,4 +52,4 @@ instance.interceptors.response.use(
   },
 );
 
-export default instance;
+export default axiosWithAuth;

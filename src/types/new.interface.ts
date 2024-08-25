@@ -27,14 +27,13 @@ export interface INew {
   _id: string;
   slug: string;
   title: string;
-  subtitle: string;
+  description: string;
   category: string;
-  likes: number;
-  author: Pick<User, "username" | "avatar">;
+  author: Pick<User, "username" | "avatarPath">;
   views: number;
-  preview_img: string;
+  poster: string;
   createdAt: string;
-  blocks: NewBlock[];
+  info: NewBlock[];
 }
 
 export interface INewResponse {

@@ -33,7 +33,7 @@ const NewsSortDropdown = memo(() => {
         <DropdownItem
           key="view"
           startContent={<EyeOpenedIcon />}
-          onClick={() => setSortBy("view")}
+          onClick={() => setSortBy("views")}
         >
           Просмотрам
         </DropdownItem>

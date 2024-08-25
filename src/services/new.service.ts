@@ -12,7 +12,7 @@ export const NewService = {
     date: string,
   ) {
     const { data: news } = await axios.get<INewResponse>(
-      "http://localhost:1418/api/news",
+      "http://localhost:1418/api/posts",
       {
         params: {
           _limit: limit,

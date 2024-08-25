@@ -36,7 +36,7 @@ const NewsCard = memo((props: INewCard) => {
           alt={item.slug}
           className="object-cover rounded-lg"
           fill={true}
-          src={`http://localhost:1418${item.preview_img}`}
+          src={`http://localhost:1418${item.poster}`}
         />
       </CardBody>
       <CardFooter className="flex h-60 w-full items-start flex-col gap-y-3 text-small justify-between">
@@ -45,7 +45,7 @@ const NewsCard = memo((props: INewCard) => {
             isBordered
             className="w-6 h-6 text-tiny"
             color="primary"
-            src={`http://localhost:1418${item.author.avatar}`}
+            src={`http://localhost:1418${item.author.avatarPath}`}
           />
           <span>{item.author.username}</span>
           <span>•</span>
@@ -60,7 +60,7 @@ const NewsCard = memo((props: INewCard) => {
         <b className="text-xl text-left line-clamp-1">{item.title}</b>
 
         <p className="text-lg text-left text-default-600 line-clamp-3">
-          {item.subtitle}
+          {item.description}
         </p>
 
         <div className="flex flex-row justify-between w-full items-center">
@@ -69,13 +69,7 @@ const NewsCard = memo((props: INewCard) => {
           </Chip>
           <div className="flex text-danger flex-row gap-x-3">
             <HeartFilledIcon size={30} />
-            <AvatarGroup
-              isBordered
-              color="danger"
-              max={3}
-              size="sm"
-              total={item.likes}
-            >
+            <AvatarGroup isBordered color="danger" max={3} size="sm" total={10}>
               <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
               <Avatar src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
               <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
